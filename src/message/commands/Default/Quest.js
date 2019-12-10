@@ -3,10 +3,10 @@ import Command from "../Command.js";
 export default class QuestStart extends Command {
 
     constructor() {
-        super("queststart");
+        super("quest");
     }
 
     execute() {
-        console.log("test");
+        console.log("test2");
     }
 }
