@@ -8,12 +8,16 @@ export default class QuestStartCmd extends Command {
         super("queststart");
     }
 
-    execute(serverID, channelID, playerName, playerID, command, args, service) {
+    execute(serverID, channelID, playerName, playerID, args, service) {
         if (isQuestRunning(serverID)) {
-            let message = "A Quest is already running for this server.";
+            const message = "A Quest is already running for this server.";
+            console.log(channelID, message, service);
             sendMessage(channelID, message, service);
         } else {
+            const message = "Placeholder, Started.";
+            console.log(channelID, message, service);
+            sendMessage(channelID, message, service);
             startQuest(serverID, channelID, service);
         }
-    }
+1    }
 }

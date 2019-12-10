@@ -5,12 +5,12 @@ function handleCommand(serverID, channelID, playerName, playerID, command, args,
     if (commandMap.size === 0) {
         loadCommandSet("Default").then(() => {
             if (commandMap.has(command)) {
-                commandMap.get(command).execute(serverID, channelID, playerName, playerID, command, args, service);
+                commandMap.get(command).execute(serverID, channelID, playerName, playerID, args, service);
             }
         })
     } else {
         if (commandMap.has(command)) {
-            commandMap.get(command).execute(serverID, channelID, playerName, playerID, command, args, service);
+            commandMap.get(command).execute(serverID, channelID, playerName, playerID, args, service);
         }
     }
 }
@@ -23,6 +23,8 @@ async function loadCommandSet(commandSet) {
         commandMap.set(command.getName(), command);
     }
 }
+
+//Unload Command Set. 
 
 export {
     handleCommand
