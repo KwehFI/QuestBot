@@ -1,6 +1,6 @@
 import Command from "../Command.js";
 
-export default class QuestStart extends Command {
+export default class QuestCmd extends Command {
 
     constructor() {
         super("quest");
